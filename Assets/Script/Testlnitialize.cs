@@ -10,6 +10,6 @@ public class Testlnitialize : MonoBehaviour {
     {
         Debug.Log("After Scene is loaded and game is running");
         //スクリーンサイズの指定
-        Screen.SetResolution(1920, 1080, false);
+        Screen.SetResolution(1280, 720, false);
     }
 }
