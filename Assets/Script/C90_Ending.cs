@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class C90_Ending : MonoBehaviour {
 	private C02_StageScene c02_stageScene;
@@ -19,8 +19,8 @@ public class C90_Ending : MonoBehaviour {
 		step_timer += Time.deltaTime;
 		
 		if(step_timer > 120.0f){			// ５秒たったら
-			c03_Score.Reset_score();	// スコアをクリア.	
-			Application.LoadLevel(0);	// タイトルシーンに移動.
+			c03_Score.Reset_score();		// スコアをクリア.
+			SceneManager.LoadScene(0);		// タイトルシーンに移動.
 		}
 	}
 }
