@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class C02_StageScene : MonoBehaviour {
 	private	C03_Score		c03_Score;
@@ -25,8 +25,10 @@ public class C02_StageScene : MonoBehaviour {
 		if(gameClear){
 			if(Input.GetMouseButtonDown(0)){
 				stage_no++;
-				if(stage_no < 3){	Application.LoadLevel(stage_no);
-				}else{				Application.LoadLevel("ending");
+				if(stage_no < 3){
+					SceneManager.LoadScene(stage_no);
+				}else{
+					SceneManager.LoadScene("ending");
 				}
 			}
 			return;		// フラグが立っている時、Update()関数を強制終了。
@@ -36,7 +38,7 @@ public class C02_StageScene : MonoBehaviour {
 			if(Input.GetMouseButtonDown(0)){
 				stage_no = 1;				// ステージNoの初期化.
 				c03_Score.Reset_score();	// スコアの初期化.
-				Application.LoadLevel(0);	// タイトルへ.
+				SceneManager.LoadScene(0);	// タイトルへ.
 			}
 			return;		// フラグが立っている時、Update()関数を強制終了。
 		}

@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class C01_TitleScene : MonoBehaviour {
 	void OnGUI(){
 		if(GUI.Button(new Rect(Screen.width-730 , Screen.height-150 , 140 , 60),"START")){
-			Application.LoadLevel("stage");	
+			SceneManager.LoadScene("stage");
 		}
 
 		if(Input.GetKey("return")) {
-			Application.LoadLevel("stage");
+			SceneManager.LoadScene("stage");
 		}
 	}
 }
