@@ -1,0 +1,29 @@
+---
+name: Lint Code
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+permissions: {}
+
+jobs:
+  build:
+    name: Lint code
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Lint code
+        uses: github/super-linter/slim@v7
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          FILTER_REGEX_INCLUDE: ^Assets/Code/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
