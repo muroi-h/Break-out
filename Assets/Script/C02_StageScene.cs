@@ -16,8 +16,8 @@ public class C02_StageScene : MonoBehaviour {
 		c03_Score	= GetComponent<C03_Score>();
 		c11_Ball	= GameObject.Find("Ball").GetComponent<C11_Ball>();
 		switch(stage_no){
-		case 1:	blockSetting_01(); break;		// ステージ１のブロックの配置.
-		case 2: blockSetting_02(); break;		// ステージ２のブロックの配置.
+		case 1:	blockSetting(); break;		// ステージ１のブロックの配置.
+		case 2: blockSetting(); break;		// ステージ２のブロックの配置.
 		}
 	}
 	
@@ -51,28 +51,8 @@ public class C02_StageScene : MonoBehaviour {
 		}
 	}
 	
-	//■■■ステージ１のブロックの配置■■■■■■■■■■■■■■■■■■■■■■■■■
-	private void blockSetting_01(){
-		for(int i=0 ; i<4 ; i++){
-			// プレハブの作成.
-			GameObject block_right1 = GameObject.Instantiate(prefab[0]) as GameObject;
-			GameObject block_right2 = GameObject.Instantiate(prefab[1]) as GameObject;
-			GameObject block_right3 = GameObject.Instantiate(prefab[2]) as GameObject;
-			GameObject block_left1  = GameObject.Instantiate(prefab[0]) as GameObject;
-			GameObject block_left2  = GameObject.Instantiate(prefab[1]) as GameObject;
-			GameObject block_left3  = GameObject.Instantiate(prefab[2]) as GameObject;
-			// プレハブの配置.
-			block_right1.transform.position = new Vector3( 3.0f + (5*i) , 19.0f , 0.0f);
-			block_right2.transform.position = new Vector3( 3.0f + (5*i) , 21.0f , 0.0f);
-			block_right3.transform.position = new Vector3( 3.0f + (5*i) , 23.0f , 0.0f);
-			block_left1.transform.position  = new Vector3(-3.0f - (5*i) , 19.0f , 0.0f);
-			block_left2.transform.position  = new Vector3(-3.0f - (5*i) , 21.0f , 0.0f);
-			block_left3.transform.position  = new Vector3(-3.0f - (5*i) , 23.0f , 0.0f);
-		}
-	}
-	
-	//■■■ステージ２のブロックの配置■■■■■■■■■■■■■■■■■■■■■■■■■
-	private void blockSetting_02(){
+	//■■■ブロックの配置■■■■■■■■■■■■■■■■■■■■■■■■■
+	private void blockSetting(){
 		for(int i=0 ; i<4 ; i++){
 			// プレハブの作成.
 			GameObject block_right1 = GameObject.Instantiate(prefab[0]) as GameObject;
