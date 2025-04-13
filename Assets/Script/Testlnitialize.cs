@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Testlnitialize : MonoBehaviour {
+public class Testlnitialize : MonoBehaviour
+{
 
     //属性の設定
-	[RuntimeInitializeOnLoadMethod]
-	static void OnRuntimeMethodLoad()
+    [RuntimeInitializeOnLoadMethod]
+    static void OnRuntimeMethodLoad()
     {
         Debug.Log("After Scene is loaded and game is running");
         //スクリーンサイズの指定
